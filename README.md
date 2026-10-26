@@ -1,7 +1,6 @@
 # Site Saturno Academy · Turma Fundadora 2026/2027
 
-Publicado em https://casa-saturno.github.io/saturno-academy/ (GitHub Pages, branch `main`). Para atualizar: editar, `git commit`, `git push`; o deploy leva 1–3 minutos.
-Domínio próprio: adicionar o arquivo `CNAME` com o domínio e criar um registro CNAME no DNS apontando para `casa-saturno.github.io`.
+Publicado em **https://saturnoacademy.com** (GitHub Pages, branch `main`, arquivo `CNAME`; www e casa-saturno.github.io/saturno-academy redirecionam para ele; HTTPS forçado). DNS no Cloudflare: 4 A + 4 AAAA na raiz para os IPs do GitHub Pages e CNAME www → casa-saturno.github.io, todos em modo "DNS only". Para atualizar o site: editar, `git commit`, `git push`; o deploy leva 1–3 minutos.
 
 Página única de vendas (`index.html`) com a jornada da proposta comercial apresentada na inauguração (23/10/2026), alinhada ao contrato v4.5 (versão de 23/10/2026) e ao handoff do projeto.
 
