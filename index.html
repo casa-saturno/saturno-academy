@@ -292,6 +292,8 @@ footer details{margin-top:10px}
 footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
 .fab{position:fixed;right:18px;bottom:18px;z-index:60;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.3);text-decoration:none}
 .fab svg{width:30px;height:30px}
+.video{max-width:960px;margin:0 auto;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#000}
+.video video{width:100%;display:block;aspect-ratio:16/9}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
@@ -300,7 +302,7 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
 </head>
 <body>
 
-<div class="ribbon">Condição de <b>Turma Fundadora</b> válida até <b data-cfg="deadlineLabel"></b>. Depois, vale o valor de tabela.</div>
+<div class="ribbon">Condição de <b>Turma Fundadora</b> válida até <b data-cfg="deadlineLabel"></b>. Depois, a condição de fundador se encerra.</div>
 
 <header class="topbar">
   <div class="wrap">
@@ -319,7 +321,7 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       <p class="lead">Um programa premium de desenvolvimento artístico e de carreira para jovens artistas, criado dentro do ecossistema da Casa Saturno. <strong>Aprender fazendo: a sala de aula encontra o mercado.</strong></p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#matricula">Quero a condição de fundador</a>
-        <a class="btn btn-ghost" href="#investimento">Ver planos e valores</a>
+        <a class="btn btn-ghost" href="#video">Assistir à apresentação</a>
       </div>
       <p class="micro">Formação artística + carreira + mercado + experiência, no mesmo lugar. Artista e manager na mesma matrícula.</p>
       <div class="stats">
@@ -331,6 +333,22 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
     <div class="hero-art">
       <img class="lines" src="assets/saturn-lines.webp" alt="" aria-hidden="true">
       <img class="girl" src="assets/stage-girl.webp" alt="Artista em frente ao público em um palco iluminado">
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEO -->
+<section class="dark" id="video" style="padding-top:clamp(40px,6vw,70px)">
+  <div class="wrap">
+    <div class="center rv" style="margin-bottom:26px">
+      <div class="eyebrow">Em 2 minutos</div>
+      <h2>Assista: o que é a Saturno Academy.</h2>
+      <p class="lead">O vídeo que abriu a apresentação da Turma Fundadora. Dê o play antes de continuar.</p>
+    </div>
+    <div class="video rv">
+      <video controls playsinline preload="metadata" poster="assets/video-poster.webp">
+        <source src="assets/apresentacao.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
@@ -610,8 +628,9 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
         <small>Tudo isso conectado</small>
         <b style="margin:10px 0">Um único ecossistema.</b>
         <p style="color:#CFC9E6;margin:0 0 18px;font-size:.92rem">Formação artística + carreira + imagem + mercado + experiências.</p>
-        <small>Condição fundadora</small>
-        <b class="grad-text" style="background:linear-gradient(90deg,#C7B6FF,#A47CF5);-webkit-background-clip:text;background-clip:text">R$ <span data-cfg="fundador"></span>/mês</b>
+        <small>Turma Fundadora</small>
+        <b class="grad-text" style="background:linear-gradient(90deg,#C7B6FF,#A47CF5);-webkit-background-clip:text;background-clip:text">Condição especial de investimento.</b>
+        <a class="btn btn-ghost btn-sm" href="#matricula" style="margin-top:14px;align-self:center">Receber os valores no WhatsApp</a>
       </div>
     </div>
     <div class="callout rv"><span class="star">✦</span><p><strong>Você não está comparando uma mensalidade com uma aula.</strong> Está comparando com tudo o que seria preciso contratar para construir uma carreira.</p></div>
@@ -651,7 +670,7 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       </div>
     </div>
     <div class="feat c3 rv" style="margin-top:40px">
-      <div><span class="ico">🏷</span><b>Abono Fundador</b><span>R$ <span data-cfg="fundador"></span> por parcela em vez dos R$ <span data-cfg="tabela"></span> de tabela, em todas as parcelas pagas em dia.</span></div>
+      <div><span class="ico">🏷</span><b>Abono Fundador</b><span>Condição especial de investimento por todo o Ano 1, garantida em todas as parcelas pagas em dia. Valores enviados pelo WhatsApp.</span></div>
       <div><span class="ico">📅</span><b>Ano 1 inteiro em 12 parcelas</b><span>Ambientação e os dois semestres de 2027 cobertos, sem parcela em outubro, novembro e dezembro de 2027.</span></div>
       <div><span class="ico">🧱</span><b>Parede dos Fundadores</b><span>O nome do artista eternizado no espaço da Saturno Academy, com autorização do responsável.</span></div>
       <div><span class="ico">🔁</span><b>Preferência na renovação</b><span>Prioridade de vaga para o Ano 2, antes da abertura para novos alunos.</span></div>
@@ -668,65 +687,52 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
     <div class="center rv" style="margin-bottom:30px">
       <div class="eyebrow">Investimento</div>
       <h2>Você não está pagando por aulas.<br>Está investindo em quem esse artista pode se tornar.</h2>
-      <p class="lead">Contrato do Ano 1 (ambientação + 2027) em 12 parcelas. Artista e manager na mesma matrícula. Condição de fundador para quem aderir até <strong data-cfg="deadlineLabel"></strong>.</p>
-    </div>
-    <div class="anchor rv">
-      <div class="reg"><small>Valor de tabela</small><b>R$ <span data-cfg="tabela"></span>/mês</b><em>R$ <span data-cfg="totalTabela"></span> pelo programa</em></div>
-      <div class="fun"><small>Condição Turma Fundadora</small><b>R$ <span data-cfg="fundador"></span>/mês</b><em>ou R$ <span data-cfg="avista"></span> à vista</em></div>
+      <p class="lead">Contrato do Ano 1 (ambientação + 2027) em 12 parcelas, com artista e manager na mesma matrícula. <strong>Os valores da Turma Fundadora são apresentados pessoalmente pelo nosso time</strong>: preencha a ficha de interesse e receba tudo no WhatsApp, sem compromisso.</p>
+      <a class="btn btn-primary" href="#matricula">Quero receber os valores</a>
     </div>
     <div class="plans rv">
       <div class="plan hi">
         <span class="pill">Mais escolhido</span>
-        <div class="tag">Plano Mensal Fundador</div>
-        <div class="amt">12× R$ <span data-cfg="fundador"></span></div>
-        <p class="tot">Total de R$ <span data-cfg="totalParcelado"></span> · por Pix Automático</p>
+        <div class="tag">Mensal Fundador</div>
+        <div class="amt" style="font-size:1.5rem">12 parcelas por Pix Automático</div>
         <ul>
           <li>Cobrança mensal automática no seu banco, sem usar o limite do cartão</li>
-          <li>1ª parcela na adesão; as demais todo dia 23, de nov/2026 a set/2027</li>
-          <li>Sem parcela em out, nov e dez de 2027</li>
+          <li>Abono Fundador em todas as parcelas pagas em dia</li>
+          <li>Sem parcela em outubro, novembro e dezembro de 2027</li>
         </ul>
-        <a class="btn btn-primary" href="#matricula">Garantir esta condição</a>
       </div>
       <div class="plan">
-        <div class="tag">Plano Anual à Vista</div>
-        <div class="amt">R$ <span data-cfg="avista"></span></div>
-        <p class="tot">Pagamento único por Pix ou TED · equivale a R$ <span data-cfg="avistaMes"></span>/mês</p>
+        <div class="tag">Anual à Vista</div>
+        <div class="amt" style="font-size:1.5rem">Pagamento único</div>
         <ul>
-          <li>Economia de R$ <span data-cfg="economia"></span> em relação ao parcelado</li>
-          <li>Pago na adesão, dentro do prazo da Turma Fundadora</li>
+          <li>Pix ou TED na adesão, com desconto sobre o parcelado</li>
+          <li>O menor custo total do programa</li>
           <li>Mesmos benefícios de fundador</li>
         </ul>
-        <a class="btn btn-ghost" href="#matricula">Quero pagar à vista</a>
       </div>
       <div class="plan">
-        <div class="tag">Plano Anual no Cartão</div>
-        <div class="amt">12× R$ <span data-cfg="fundador"></span></div>
-        <p class="tot">Compra única de R$ <span data-cfg="totalParcelado"></span>, parcelada no cartão de crédito</p>
+        <div class="tag">Anual no Cartão</div>
+        <div class="amt" style="font-size:1.5rem">12× no cartão de crédito</div>
         <ul>
-          <li>Para quem prefere concentrar tudo no cartão</li>
+          <li>Compra única parcelada, para quem prefere concentrar tudo no cartão</li>
           <li>Ocupa o limite do cartão pelo valor total</li>
           <li>Mesmos benefícios de fundador</li>
         </ul>
-        <a class="btn btn-ghost" href="#matricula">Quero no cartão</a>
       </div>
-    </div>
-    <div class="abono rv">
-      <h3>Como funciona o Abono Fundador</h3>
-      <p>A parcela de tabela é de R$ <span data-cfg="tabela"></span>. Fundadores recebem um abono de pontualidade de R$ <span data-cfg="abono"></span> em cada parcela paga em dia, com 7 dias de tolerância, e pagam R$ <span data-cfg="fundador"></span>. Se uma parcela atrasar mais de 7 dias, só ela volta ao valor de tabela (com multa de 2% e juros); o abono continua valendo nas parcelas seguintes pagas em dia.</p>
     </div>
     <div class="incl rv">
       <div class="card lav"><h3>O que está incluído</h3><ul><li>Os 4 eixos do programa: desenvolvimento artístico, carreira, mercado e experiência</li><li>Ao menos 2 encontros presenciais por semana no período principal</li><li>Ao menos 2 fonogramas coletivos por semestre</li><li>Participação do manager nas atividades de carreira e mercado</li><li>Benefícios de fundador</li></ul></div>
       <div class="card"><h3>O que não está incluído</h3><ul><li>Material de apoio, uniforme e figurino</li><li>Instrumentos e equipamentos de uso individual</li><li>Transporte e alimentação</li><li>Taxas de terceiros (inclusive custas de alvará judicial, quando necessário)</li><li>Serviços contratados à parte</li></ul></div>
     </div>
     <div class="safety rv">
-      <div><span class="ico">🛡</span><div><b>Desistência sem multa</b><span>Até <span data-cfg="desistencia"></span>, a família pode desistir sem multa, com retenção de até 2 parcelas. Depois disso, aviso de 30 dias e multa de 20% sobre os meses restantes.</span></div></div>
+      <div><span class="ico">🛡</span><div><b>Desistência sem multa</b><span>Até <span data-cfg="desistencia"></span>, a família pode desistir sem multa, com retenção de até 2 parcelas. Depois disso, aviso de 30 dias e multa proporcional aos meses restantes.</span></div></div>
       <div><span class="ico">↩</span><div><b>Garantia de início</b><span>Se a Academy decidir não iniciar o período principal, avisa até <span data-cfg="avisoInicio"></span> e devolve integralmente o que foi pago.</span></div></div>
     </div>
     <div class="deadline rv">
-      <div class="t">A condição de fundador termina em<small><span data-cfg="deadlineLabelFull"></span>. Depois, vale o valor de tabela de R$ <span data-cfg="tabela"></span>/mês.</small></div>
+      <div class="t">A condição de fundador termina em<small><span data-cfg="deadlineLabelFull"></span>. Depois, a Turma Fundadora se fecha e a condição especial se encerra.</small></div>
       <div class="cdbig" id="cd-big"><div><b>--</b><span>dias</span></div><div><b>--</b><span>horas</span></div><div><b>--</b><span>min</span></div><div><b>--</b><span>seg</span></div></div>
     </div>
-    <p class="small center" style="margin-top:14px;font-size:.74rem">Comparação exigida pelo Código de Defesa do Consumidor: total parcelado R$ <span data-cfg="totalParcelado"></span> contra R$ <span data-cfg="avista"></span> à vista, diferença de R$ <span data-cfg="economia"></span> (12,5%). Condições conforme o contrato de prestação de serviços.</p>
+    <p class="small center" style="margin-top:14px;font-size:.74rem">Condições conforme o contrato de prestação de serviços, apresentado integralmente antes da adesão.</p>
   </div>
 </section>
 
@@ -745,14 +751,14 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
         <dt>Para quem</dt><dd>Jovens artistas que querem construir carreira, com o responsável participando como manager. Há processo de seleção.</dd>
         <dt>Quando</dt><dd>Ambientação em nov e dez/2026; período principal de jan a dez/2027. <b>Mínimo de 2 encontros presenciais por semana</b> e 2 fonogramas coletivos por semestre.</dd>
         <dt>Onde</dt><dd>Aerotown Power Center, Av. Ayrton Senna, 2.541, Loja 179, Barra da Tijuca, Rio de Janeiro.</dd>
-        <dt>Investimento</dt><dd><b>Fundador: 12× R$ <span data-cfg="fundador"></span></b> (Pix Automático ou cartão, total R$ <span data-cfg="totalParcelado"></span>) <b>ou R$ <span data-cfg="avista"></span> à vista</b>. Valor de tabela: R$ <span data-cfg="tabela"></span>/mês.</dd>
+        <dt>Investimento</dt><dd><b>Condição especial da Turma Fundadora</b>, em 12 parcelas por Pix Automático, à vista com desconto ou 12× no cartão. Os valores são enviados pelo WhatsApp depois da ficha de interesse.</dd>
         <dt>Não inclui</dt><dd>Material, uniforme, figurino, instrumentos, transporte, alimentação e taxas de terceiros.</dd>
         <dt>Segurança</dt><dd>Desistência sem multa até <span data-cfg="desistencia"></span>. Contrato de 12 meses (Ano 1), renovação opcional com preferência de vaga.</dd>
         <dt>Prazo</dt><dd><b>Condição de fundador até <span data-cfg="deadlineLabel"></span>.</b> <span data-cfg="vagas"></span> vagas.</dd>
       </dl>
       <div class="acts">
         <button class="btn btn-primary" id="share-btn" type="button">Enviar este resumo</button>
-        <a class="btn btn-ghost" id="wa-summary" href="#" target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+        <a class="btn btn-ghost" id="wa-summary" href="#" target="_blank" rel="noopener">Receber os valores no WhatsApp</a>
       </div>
     </div>
   </div>
@@ -762,11 +768,11 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
 <section class="faq" style="background:var(--bg-2)">
   <div class="wrap" style="max-width:860px">
     <div class="center rv" style="margin-bottom:26px">
-      <div class="eyebrow">Perguntas que as famílias fizeram na inauguração</div>
+      <div class="eyebrow">Perguntas que as famílias mais fazem</div>
       <h2>Sua dúvida também faz parte dessa conversa.</h2>
     </div>
     <div class="rv">
-      <details open><summary>Quanto custa e como posso pagar?</summary><div class="a">Três planos para a Turma Fundadora: <b>Mensal Fundador</b> (12× R$ <span data-cfg="fundador"></span> por Pix Automático, sem usar o limite do cartão), <b>Anual à Vista</b> (R$ <span data-cfg="avista"></span> por Pix ou TED) e <b>Anual no Cartão</b> (12× R$ <span data-cfg="fundador"></span> em uma compra única parcelada). O valor de tabela é R$ <span data-cfg="tabela"></span>/mês; fundadores pagam R$ <span data-cfg="fundador"></span> graças ao abono de pontualidade.</div></details>
+      <details open><summary>Quanto custa e como posso pagar?</summary><div class="a">O investimento da Turma Fundadora é apresentado pessoalmente pelo nosso time, no WhatsApp, depois que você preenche a ficha de interesse. São três formas de pagamento: <b>Mensal Fundador</b> (12 parcelas por Pix Automático, sem usar o limite do cartão), <b>Anual à Vista</b> (Pix ou TED, com desconto) e <b>Anual no Cartão</b> (12× em uma compra única). Fundadores têm condição especial em relação ao valor de tabela, válida até <span data-cfg="deadlineLabel"></span>.</div></details>
       <details><summary>Quantos dias por semana? Quais os horários?</summary><div class="a">O contrato garante ao menos 2 encontros presenciais por semana no período principal. A referência de rotina é: atividades artísticas em dias úteis e carreira/mercado aos sábados, para facilitar a presença dos responsáveis. A grade detalhada com dias e horários é enviada na matrícula.</div></details>
       <details><summary>Quanto tempo dura? Preciso me comprometer pelos 3 anos?</summary><div class="a">A trajetória completa tem 3 anos (6 semestres), mas o contrato atual é de 12 meses: o Ano 1, com ambientação em nov–dez/2026 e período principal de jan a dez/2027. A renovação para o Ano 2 é opcional, com preferência de vaga para fundadores.</div></details>
       <details><summary>Os responsáveis participam? Ficam durante as atividades?</summary><div class="a">Sim. Cada matrícula tem um manager (mãe, pai ou outro responsável) que participa das atividades de carreira e mercado, concentradas aos sábados. Nas aulas artísticas, o manager não participa, salvo convite. É um acompanhante por vez.</div></details>
@@ -791,21 +797,21 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       <p class="lead" style="color:#DCD6F5">A Saturno Academy não promete fama. Entrega formação, ferramentas, ambiente, prática e acesso para quem está disposto a construir.</p>
     </div>
     <form class="form rv" id="lead-form">
-      <h3 style="margin-bottom:4px">Quero conversar sobre a Turma Fundadora</h3>
-      <p class="small" style="margin:0">Sem documentos nesta etapa. Você continua a conversa no WhatsApp com o time da Academy.</p>
+      <h3 style="margin-bottom:4px">Quero receber os valores da Turma Fundadora</h3>
+      <p class="small" style="margin:0">Sem documentos nesta etapa. Você recebe os valores e tira dúvidas no WhatsApp com o time da Academy.</p>
       <label for="f-resp">Seu nome (responsável)</label><input id="f-resp" name="resp" required placeholder="Nome completo" autocomplete="name">
       <label for="f-zap">Seu WhatsApp</label><input id="f-zap" name="zap" type="tel" required placeholder="(21) 9 9999-9999" autocomplete="tel">
       <div class="row">
         <div><label for="f-idade">Idade do artista</label><input id="f-idade" name="idade" type="number" min="3" max="60" required placeholder="Ex.: 12"></div>
         <div><label for="f-bairro">Bairro / cidade</label><input id="f-bairro" name="bairro" required placeholder="Ex.: Recreio, RJ"></div>
       </div>
-      <label for="f-plano">Plano de interesse</label>
-      <select id="f-plano" name="plano"><option>Mensal Fundador (Pix Automático)</option><option>Anual à vista</option><option>Anual no cartão</option><option>Ainda quero entender melhor</option></select>
+      <label for="f-plano">O que você quer saber primeiro?</label>
+      <select id="f-plano" name="plano"><option>Investimento e formas de pagamento</option><option>Rotina, grade e horários</option><option>Processo de seleção</option><option>Tudo: quero uma conversa completa</option></select>
       <label for="f-origem">Como conheceu a Academy?</label>
-      <select id="f-origem" name="origem"><option>Estive na inauguração (23/10)</option><option>Instagram</option><option>Indicação de alguém</option><option>Outro</option></select>
+      <select id="f-origem" name="origem"><option>Instagram</option><option>Indicação de alguém</option><option>Pesquisa no Google</option><option>Estive na inauguração</option><option>Outro</option></select>
       <label class="consent"><input type="checkbox" required name="lgpd"> Sou responsável legal pelo artista e autorizo a Saturno Academy a usar estes dados apenas para entrar em contato sobre a Turma Fundadora (LGPD).</label>
       <button class="btn btn-wa" type="submit">Continuar no WhatsApp</button>
-      <p class="fine">O primeiro contato não é uma compra. É o início de uma conversa.</p>
+      <p class="fine">O primeiro contato não é uma compra. É o início de uma conversa. Os valores chegam na primeira resposta.</p>
     </form>
   </div>
 </section>
@@ -837,6 +843,7 @@ const CFG = {
   deadlineLabel:   "sexta-feira, 30 de outubro",
   deadlineLabelFull:"Sexta-feira, 30 de outubro de 2026, 23h59",
   vagas: 50,
+  // valores do contrato (não exibidos no site por estratégia; enviados no WhatsApp)
   tabela: 4600, totalTabela: 55200,
   fundador: 3600, totalParcelado: 43200,
   avista: 38400, avistaMes: 3200, abono: 1000,
@@ -849,7 +856,7 @@ const fmt = v => typeof v === 'number' ? v.toLocaleString('pt-BR') : v;
 document.querySelectorAll('[data-cfg]').forEach(el => { el.textContent = fmt(CFG[el.dataset.cfg]); });
 
 const waBase = "https://wa.me/" + CFG.WHATSAPP_NUMBER + "?text=";
-const waDefault = waBase + encodeURIComponent("Olá! Quero saber mais sobre a Turma Fundadora da Saturno Academy.");
+const waDefault = waBase + encodeURIComponent("Olá! Quero receber os valores e saber mais sobre a Turma Fundadora da Saturno Academy.");
 for (const id of ['wa-fab','wa-footer','wa-summary']) document.getElementById(id).href = waDefault;
 document.getElementById('ig-link').href = CFG.INSTAGRAM_URL;
 const ml = document.getElementById('mail-link'); ml.href = 'mailto:' + CFG.EMAIL; ml.textContent = CFG.EMAIL;
@@ -857,16 +864,16 @@ const ml = document.getElementById('mail-link'); ml.href = 'mailto:' + CFG.EMAIL
 document.getElementById('lead-form').addEventListener('submit', e => {
   e.preventDefault();
   const f = e.target;
-  const msg = `Olá! Quero conversar sobre a Turma Fundadora da Saturno Academy.\n` +
+  const msg = `Olá! Quero receber os valores da Turma Fundadora da Saturno Academy.\n` +
     `Responsável: ${f.resp.value}\nWhatsApp: ${f.zap.value}\nIdade do artista: ${f.idade.value}\n` +
-    `Bairro/cidade: ${f.bairro.value}\nPlano de interesse: ${f.plano.value}\nComo conheci: ${f.origem.value}`;
+    `Bairro/cidade: ${f.bairro.value}\nQuero saber primeiro: ${f.plano.value}\nComo conheci: ${f.origem.value}`;
   window.open(waBase + encodeURIComponent(msg), '_blank');
 });
 
 /* compartilhar o resumo */
 document.getElementById('share-btn').addEventListener('click', async () => {
   const url = location.origin + location.pathname + '#resumo';
-  const text = `Saturno Academy · Turma Fundadora\nFundador: 12× R$ ${fmt(CFG.fundador)} ou R$ ${fmt(CFG.avista)} à vista (tabela R$ ${fmt(CFG.tabela)}/mês). ${CFG.vagas} vagas, condição até ${CFG.deadlineLabel}.\nResumo completo: ${url}`;
+  const text = `Saturno Academy · Turma Fundadora\nPrograma de desenvolvimento artístico e de carreira da Casa Saturno. ${CFG.vagas} vagas, condição especial até ${CFG.deadlineLabel}.\nResumo completo: ${url}`;
   if (navigator.share) { try { await navigator.share({ title: 'Saturno Academy · Turma Fundadora', text, url }); return; } catch (_) {} }
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 });
