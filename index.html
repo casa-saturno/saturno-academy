@@ -4,11 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saturno Academy · Turma Fundadora 2026/2027</title>
-<meta name="description" content="Programa premium de desenvolvimento artístico e de carreira para jovens artistas, dentro do ecossistema da Casa Saturno. Turma Fundadora: 50 vagas, condição especial por tempo limitado.">
+<meta name="description" content="Programa premium de desenvolvimento artístico e de carreira para jovens artistas, dentro do ecossistema da Casa Saturno. Turma Fundadora: 50 vagas, com seleção e condição especial de fundador.">
 <meta property="og:title" content="Saturno Academy · Turma Fundadora">
 <meta property="og:description" content="Talento é o começo. Carreira se constrói. Formação artística + carreira + mercado + experiência, no mesmo lugar. 50 vagas de fundador.">
 <meta property="og:image" content="assets/case-kysha-mine.webp">
 <link rel="icon" href="assets/logo-small.webp">
+<meta name="facebook-domain-verification" content="fwc0miwww73insagzqwf9fjp4js23z" />
+<script>
+/* ===== MEDIÇÃO E MODO DA OFERTA (ver claude/handoff-medicao-e-oferta-pos-3010.md) ===== */
+window.SA = {
+  PIXEL_ID: '1036113599501859',          // Meta Pixel "Saturno Academy - Site"
+  GA4_ID: 'G-DTTTNXSLPN',                // Google Analytics 4, propriedade "Saturno Academy"
+  CONSENT_BANNER: true,                  // false = carrega Pixel e GA4 sem perguntar (só a política precisa citar)
+  MODO_OFERTA: 'auto',                   // 'auto' | 'contador' | 'vagas'
+  VAGAS_DESDE: '2026-10-31T00:00:00-03:00' // em 'auto', vira 'vagas' a partir deste instante
+};
+(function () {
+  var m = SA.MODO_OFERTA;
+  var q = new URLSearchParams(location.search).get('modo');   // ?modo=vagas ou ?modo=contador para pré-visualizar
+  if (q === 'vagas' || q === 'contador') m = q;
+  if (m === 'auto') m = Date.now() >= new Date(SA.VAGAS_DESDE).getTime() ? 'vagas' : 'contador';
+  SA.modo = m;
+  document.documentElement.setAttribute('data-modo', m);
+})();
+
+/* origem (UTM): carrega sempre; só grava no navegador, não envia nada a terceiros */
+(function () {
+  var KEY = 'sa_origem', DIAS = 30;
+  var p = new URLSearchParams(location.search);
+  var utm = {
+    source: p.get('utm_source'), medium: p.get('utm_medium'),
+    campaign: p.get('utm_campaign'), content: p.get('utm_content'), term: p.get('utm_term')
+  };
+  var salvo = null;
+  try { salvo = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+  if (utm.source || utm.campaign) {
+    salvo = { utm: utm, ref: document.referrer, ts: Date.now() };            // chegou com UTM: vale o último toque
+    try { localStorage.setItem(KEY, JSON.stringify(salvo)); } catch (e) {}
+  } else if (!salvo || Date.now() - salvo.ts > DIAS * 864e5) {
+    var ref = document.referrer || '';
+    var fonte = /instagram/.test(ref) ? 'instagram'
+      : /facebook|fb\./.test(ref) ? 'facebook'
+      : /google/.test(ref) ? 'google'
+      : /whatsapp|wa\.me/.test(ref) ? 'whatsapp'
+      : ref ? 'outro' : 'direto';
+    salvo = { utm: { source: fonte, medium: 'organico' }, ref: ref, ts: Date.now() };
+    try { localStorage.setItem(KEY, JSON.stringify(salvo)); } catch (e) {}
+  }
+  window.SA_ORIGEM = salvo;
+  window.saCodigoOrigem = function () {
+    var u = (salvo && salvo.utm) || {};
+    return [u.source, u.medium, u.campaign, u.content, u.term].filter(Boolean).join('/') || 'site';
+  };
+})();
+
+/* consentimento: {v:1|0, ts}; aceite vale 365 dias, recusa 30 dias */
+window.saConsent = function () {
+  var c = null;
+  try { c = JSON.parse(localStorage.getItem('sa_consent') || 'null'); } catch (e) {}
+  if (!c || typeof c.v !== 'number') return null;
+  var dias = c.v === 1 ? 365 : 30;
+  return Date.now() - c.ts < dias * 864e5 ? c.v : null;
+};
+
+/* Pixel da Meta + GA4: só depois do aceite (ou sempre, se CONSENT_BANNER = false) */
+window.saTrackingLoaded = false;
+window.saLoadTracking = function () {
+  if (saTrackingLoaded) return; saTrackingLoaded = true;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', SA.PIXEL_ID);
+  fbq('track', 'PageView');
+  var g = document.createElement('script'); g.async = true;
+  g.src = 'https://www.googletagmanager.com/gtag/js?id=' + SA.GA4_ID;
+  document.head.appendChild(g);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', SA.GA4_ID);
+};
+if (!SA.CONSENT_BANNER || saConsent() === 1) saLoadTracking();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -292,6 +371,17 @@ footer details{margin-top:10px}
 footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
 .fab{position:fixed;right:18px;bottom:18px;z-index:60;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.3);text-decoration:none}
 .fab svg{width:30px;height:30px}
+/* modo da oferta: html[data-modo] é definido no <head> */
+html[data-modo="vagas"] .so-contador{display:none!important}
+html[data-modo="contador"] .so-vagas{display:none!important}
+/* banner de cookies */
+.ck{position:fixed;left:18px;right:18px;bottom:18px;z-index:70;max-width:760px;margin:0 auto;background:var(--ink);color:#fff;border-radius:16px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;box-shadow:0 16px 44px rgba(0,0,0,.35);font-size:.86rem;line-height:1.45}
+.ck[hidden]{display:none}
+.ck p{margin:0;flex:1 1 320px}
+.ck a{color:#C7B6FF;text-decoration:underline}
+.ck .acts{display:flex;gap:8px;flex-wrap:wrap}
+.ck .alt{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45);box-shadow:none}
+@media(max-width:700px){.ck{left:10px;right:10px;bottom:88px;padding:14px 16px}}
 .video{max-width:960px;margin:0 auto;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#000}
 .video video{width:100%;display:block;aspect-ratio:16/9}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
@@ -302,12 +392,12 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
 </head>
 <body>
 
-<div class="ribbon">Condição de <b>Turma Fundadora</b> válida até <b data-cfg="deadlineLabel"></b>. Depois, a condição de fundador se encerra.</div>
+<div class="ribbon"><span class="so-contador">Condição de <b>Turma Fundadora</b> válida até <b data-cfg="deadlineLabel"></b>. Depois, a condição de fundador se encerra.</span><span class="so-vagas">Turma Fundadora: <b><span data-cfg="vagas"></span> vagas</b>. Quando a turma fechar, a condição de fundador se encerra.</span></div>
 
 <header class="topbar">
   <div class="wrap">
     <a href="#top"><img src="assets/logo.webp" alt="Saturno Academy"></a>
-    <div class="cd"><span class="lbl">Condição fundadora termina em</span> <strong id="cd-top">--d --h --m</strong></div>
+    <div class="cd so-contador"><span class="lbl">Condição fundadora termina em</span> <strong id="cd-top">--d --h --m</strong></div>
     <a class="btn btn-primary btn-sm" href="#matricula">Garantir minha vaga</a>
   </div>
 </header>
@@ -665,7 +755,7 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       <div class="rv">
         <div class="eyebrow">Os fundadores</div>
         <h2>Toda história tem uma primeira geração. <span class="grad-text">Essa pode ser a sua.</span></h2>
-        <p class="lead">A Turma Fundadora é limitada a <strong style="color:#fff"><span data-cfg="vagas"></span> artistas</strong>, admitidos até <strong style="color:#fff" data-cfg="deadlineLabel"></strong>. Quem entra agora não compra apenas a formação: entra para a história da Casa Saturno com condições que a primeira geração leva para sempre.</p>
+        <p class="lead"><span class="so-contador">A Turma Fundadora é limitada a <strong style="color:#fff"><span data-cfg="vagas"></span> artistas</strong>, admitidos até <strong style="color:#fff" data-cfg="deadlineLabel"></strong>.</span><span class="so-vagas">A condição de fundador vale para quem entra na Turma Fundadora, até o preenchimento das <strong style="color:#fff"><span data-cfg="vagas"></span> vagas</strong>. Não divulgamos quantas vagas restam.</span> Quem entra agora não compra apenas a formação: entra para a história da Casa Saturno com condições que a primeira geração leva para sempre.</p>
         <div class="counter"><b data-cfg="vagas"></b><span>vagas de fundador · primeira geração</span></div>
       </div>
     </div>
@@ -728,9 +818,13 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       <div><span class="ico">🛡</span><div><b>Desistência sem multa</b><span>Até <span data-cfg="desistencia"></span>, a família pode desistir sem multa, com retenção de até 2 parcelas. Depois disso, aviso de 30 dias e multa proporcional aos meses restantes.</span></div></div>
       <div><span class="ico">↩</span><div><b>Garantia de início</b><span>Se a Academy decidir não iniciar o período principal, avisa até <span data-cfg="avisoInicio"></span> e devolve integralmente o que foi pago.</span></div></div>
     </div>
-    <div class="deadline rv">
+    <div class="deadline so-contador rv">
       <div class="t">A condição de fundador termina em<small><span data-cfg="deadlineLabelFull"></span>. Depois, a Turma Fundadora se fecha e a condição especial se encerra.</small></div>
       <div class="cdbig" id="cd-big"><div><b>--</b><span>dias</span></div><div><b>--</b><span>horas</span></div><div><b>--</b><span>min</span></div><div><b>--</b><span>seg</span></div></div>
+    </div>
+    <div class="deadline so-vagas rv">
+      <div class="t">A condição de fundador vale enquanto houver vaga.<small><span data-cfg="vagas"></span> vagas, com processo de seleção. Não divulgamos quantas restam; quando a turma fechar, a condição especial se encerra.</small></div>
+      <a class="btn btn-primary btn-sm" href="#matricula">Quero conversar sobre a vaga</a>
     </div>
     <p class="small center" style="margin-top:14px;font-size:.74rem">Condições conforme o contrato de prestação de serviços, apresentado integralmente antes da adesão.</p>
   </div>
@@ -754,11 +848,12 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
         <dt>Investimento</dt><dd><b>Condição especial da Turma Fundadora</b>, em 12 parcelas por Pix Automático, à vista com desconto ou 12× no cartão. Os valores são enviados pelo WhatsApp depois da ficha de interesse.</dd>
         <dt>Não inclui</dt><dd>Material, uniforme, figurino, instrumentos, transporte, alimentação e taxas de terceiros.</dd>
         <dt>Segurança</dt><dd>Desistência sem multa até <span data-cfg="desistencia"></span>. Contrato de 12 meses (Ano 1), renovação opcional com preferência de vaga.</dd>
-        <dt>Prazo</dt><dd><b>Condição de fundador até <span data-cfg="deadlineLabel"></span>.</b> <span data-cfg="vagas"></span> vagas.</dd>
+        <dt class="so-contador">Prazo</dt><dd class="so-contador"><b>Condição de fundador até <span data-cfg="deadlineLabel"></span>.</b> <span data-cfg="vagas"></span> vagas.</dd>
+        <dt class="so-vagas">Vagas</dt><dd class="so-vagas"><b><span data-cfg="vagas"></span> vagas, com seleção.</b> A condição de fundador encerra quando a turma fechar.</dd>
       </dl>
       <div class="acts">
         <button class="btn btn-primary" id="share-btn" type="button">Enviar este resumo</button>
-        <a class="btn btn-ghost" id="wa-summary" href="#" target="_blank" rel="noopener">Receber os valores no WhatsApp</a>
+        <a class="btn btn-ghost" id="wa-summary" data-sa="cta-resumo" href="#" target="_blank" rel="noopener">Receber os valores no WhatsApp</a>
       </div>
     </div>
   </div>
@@ -772,7 +867,9 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       <h2>Sua dúvida também faz parte dessa conversa.</h2>
     </div>
     <div class="rv">
-      <details open><summary>Quanto custa e como posso pagar?</summary><div class="a">O investimento da Turma Fundadora é apresentado pessoalmente pelo nosso time, no WhatsApp, depois que você preenche a ficha de interesse. São três formas de pagamento: <b>Mensal Fundador</b> (12 parcelas por Pix Automático, sem usar o limite do cartão), <b>Anual à Vista</b> (Pix ou TED, com desconto) e <b>Anual no Cartão</b> (12× em uma compra única). Fundadores têm condição especial em relação ao valor de tabela, válida até <span data-cfg="deadlineLabel"></span>.</div></details>
+      <details open><summary>Quanto custa e como posso pagar?</summary><div class="a">O investimento da Turma Fundadora é apresentado pessoalmente pelo nosso time, no WhatsApp, depois que você preenche a ficha de interesse. São três formas de pagamento: <b>Mensal Fundador</b> (12 parcelas por Pix Automático, sem usar o limite do cartão), <b>Anual à Vista</b> (Pix ou TED, com desconto) e <b>Anual no Cartão</b> (12× em uma compra única). Fundadores têm condição especial em relação ao valor de tabela, válida <span class="so-contador">até <span data-cfg="deadlineLabel"></span></span><span class="so-vagas">enquanto houver vaga na Turma Fundadora</span>.</div></details>
+      <details class="so-vagas"><summary>Até quando posso entrar na Turma Fundadora?</summary><div class="a">Enquanto houver vaga. São <span data-cfg="vagas"></span> vagas e há processo de seleção. Não divulgamos quantas restam; quando a turma fechar, as condições de fundador deixam de existir.</div></details>
+      <details><summary>Quando começa?</summary><div class="a">A ambientação começa em novembro de 2026; o período principal vai de janeiro a dezembro de 2027. A data do primeiro encontro é informada pelo nosso time no WhatsApp.</div></details>
       <details><summary>Quantos dias por semana? Quais os horários?</summary><div class="a">O contrato garante ao menos 2 encontros presenciais por semana no período principal. A referência de rotina é: atividades artísticas em dias úteis e carreira/mercado aos sábados, para facilitar a presença dos responsáveis. A grade detalhada com dias e horários é enviada na matrícula.</div></details>
       <details><summary>Quanto tempo dura? Preciso me comprometer pelos 3 anos?</summary><div class="a">A trajetória completa tem 3 anos (6 semestres), mas o contrato atual é de 12 meses: o Ano 1, com ambientação em nov–dez/2026 e período principal de jan a dez/2027. A renovação para o Ano 2 é opcional, com preferência de vaga para fundadores.</div></details>
       <details><summary>Os responsáveis participam? Ficam durante as atividades?</summary><div class="a">Sim. Cada matrícula tem um manager (mãe, pai ou outro responsável) que participa das atividades de carreira e mercado, concentradas aos sábados. Nas aulas artísticas, o manager não participa, salvo convite. É um acompanhante por vez.</div></details>
@@ -783,7 +880,7 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       <details><summary>Precisa de autorização judicial para menores?</summary><div class="a">Para algumas atividades com menores de idade (gravações, apresentações e conteúdo publicado), a lei pode exigir alvará judicial. O responsável faz o pedido e a Academy fornece os documentos necessários. As custas não estão incluídas no valor do programa.</div></details>
       <details><summary>Transporte, alimentação e uniforme estão incluídos?</summary><div class="a">Não. O valor cobre o programa. Material de apoio, uniforme, figurino, instrumentos individuais, transporte, alimentação e taxas de terceiros ficam por conta da família.</div></details>
       <details><summary>Onde fica?</summary><div class="a">No Aerotown Power Center, Av. Ayrton Senna, 2.541, Lote 100, Loja 179, Barra da Tijuca, Rio de Janeiro.</div></details>
-      <details><summary>Quem não entrar agora terá outra chance?</summary><div class="a">Depois do prazo, novos interessados entram em lista de espera e só são admitidos se restarem vagas das <span data-cfg="vagas"></span>. A condição de fundador (abono, parede, credencial e preferência de renovação) é só da primeira geração.</div></details>
+      <details><summary>Quem não entrar agora terá outra chance?</summary><div class="a"><span class="so-contador">Depois do prazo, novos interessados entram em lista de espera e só são admitidos se restarem vagas das <span data-cfg="vagas"></span>.</span><span class="so-vagas">Enquanto houver vaga, a entrada segue pelo processo de seleção. Quando as <span data-cfg="vagas"></span> vagas forem preenchidas, novos interessados entram em lista de espera.</span> A condição de fundador (abono, parede, credencial e preferência de renovação) é só da primeira geração.</div></details>
     </div>
   </div>
 </section>
@@ -808,7 +905,7 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       <label for="f-plano">O que você quer saber primeiro?</label>
       <select id="f-plano" name="plano"><option>Investimento e formas de pagamento</option><option>Rotina, grade e horários</option><option>Processo de seleção</option><option>Tudo: quero uma conversa completa</option></select>
       <label for="f-origem">Como conheceu a Academy?</label>
-      <select id="f-origem" name="origem"><option>Instagram</option><option>Indicação de alguém</option><option>Pesquisa no Google</option><option>Estive na inauguração</option><option>Outro</option></select>
+      <select id="f-origem" name="origem"><option>Instagram</option><option>Anúncio no Instagram ou Facebook</option><option>Indicação de alguém</option><option>Pesquisa no Google</option><option>Estive na inauguração</option><option>Outro</option></select>
       <label class="consent"><input type="checkbox" required name="lgpd"> Sou responsável legal pelo artista e autorizo a Saturno Academy a usar estes dados apenas para entrar em contato sobre a Turma Fundadora (LGPD).</label>
       <button class="btn btn-wa" type="submit">Continuar no WhatsApp</button>
       <p class="fine">O primeiro contato não é uma compra. É o início de uma conversa. Os valores chegam na primeira resposta.</p>
@@ -823,15 +920,20 @@ footer summary{cursor:pointer;color:#CFC9E6;font-weight:700}
       <div>Programa de Desenvolvimento Artístico Saturno Academy<br>O.T. Produções Artísticas Ltda · CNPJ 33.931.690/0001-51<br>Uma iniciativa do ecossistema Casa Saturno.</div>
     </div>
     <div><strong style="color:#CFC9E6">Onde</strong><br>Aerotown Power Center<br>Av. Ayrton Senna, 2.541, Lote 100, Loja 179<br>Barra da Tijuca, Rio de Janeiro/RJ</div>
-    <div><strong style="color:#CFC9E6">Contato</strong><br><a href="#" id="ig-link" target="_blank" rel="noopener">@saturno.academy</a><br><a href="#" id="wa-footer" target="_blank" rel="noopener">WhatsApp comercial</a><br><a href="#" id="mail-link"></a>
-      <details><summary>Privacidade</summary><p style="margin-top:8px">Os dados enviados pelo formulário (nome, WhatsApp, idade do artista, bairro) são usados apenas para contato sobre a Turma Fundadora e não são compartilhados com terceiros. Não coletamos documentos neste site. Para excluir seus dados, escreva para o e-mail de contato.</p></details>
+    <div><strong style="color:#CFC9E6">Contato</strong><br><a href="#" id="ig-link" target="_blank" rel="noopener">@saturno.academy</a><br><a href="#" id="wa-footer" data-sa="rodape" target="_blank" rel="noopener">WhatsApp comercial</a><br><a href="#" id="mail-link"></a>
+      <details><summary>Privacidade</summary><p style="margin-top:8px">Os dados enviados pelo formulário (nome, WhatsApp, idade do artista, bairro) são usados apenas para contato sobre a Turma Fundadora e não são compartilhados com terceiros. Não coletamos documentos neste site. Com o seu aceite, usamos cookies do Meta Pixel e do Google Analytics para medir o site e os anúncios. Para excluir seus dados, escreva para o e-mail de contato.</p><p style="margin-top:8px"><a href="privacidade.html">Política de privacidade</a> · <a href="#" id="ck-open">Preferências de cookies</a></p></details>
     </div>
   </div>
 </footer>
 
-<a class="fab" id="wa-fab" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="fab" id="wa-fab" data-sa="flutuante" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.3c2 1.1 4.1 1.6 6.3 1.6 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.7c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.3 1.4 1.4-4.2-.3-.4a9.7 9.7 0 0 1-1.7-5.4c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
 </a>
+
+<div class="ck" id="ck" hidden role="dialog" aria-label="Cookies">
+  <p>Usamos cookies para medir o desempenho do site e dos anúncios. <a href="privacidade.html">Política de privacidade</a></p>
+  <div class="acts"><button class="btn btn-primary btn-sm" id="ck-ok" type="button">Aceitar</button><button class="btn btn-sm alt" id="ck-no" type="button">Continuar sem cookies</button></div>
+</div>
 
 <script>
 /* ===== CONFIGURAÇÃO: tudo o que muda fica aqui ===== */
@@ -866,14 +968,22 @@ document.getElementById('lead-form').addEventListener('submit', e => {
   const f = e.target;
   const msg = `Olá! Quero receber os valores da Turma Fundadora da Saturno Academy.\n` +
     `Responsável: ${f.resp.value}\nWhatsApp: ${f.zap.value}\nIdade do artista: ${f.idade.value}\n` +
-    `Bairro/cidade: ${f.bairro.value}\nQuero saber primeiro: ${f.plano.value}\nComo conheci: ${f.origem.value}`;
+    `Bairro/cidade: ${f.bairro.value}\nQuero saber primeiro: ${f.plano.value}\nComo conheci: ${f.origem.value}\n` +
+    `Origem: ${saCodigoOrigem()}`;
+  // evento Lead: só faixa etária e interesse; nunca nome, telefone, bairro ou texto livre (LGPD)
+  const idade = parseInt(f.idade.value, 10);
+  const faixa = idade <= 6 ? 'ate-6' : idade <= 10 ? '7-10' : idade <= 15 ? '11-15' : idade <= 17 ? '16-17' : '18+';
+  saTrack('Lead', { content_name: 'ficha_interesse', faixa_etaria: faixa, interesse: f.plano.value },
+          'generate_lead', { content_name: 'ficha_interesse', faixa_etaria: faixa, interesse: f.plano.value, origem: saCodigoOrigem() });
   window.open(waBase + encodeURIComponent(msg), '_blank');
 });
 
 /* compartilhar o resumo */
 document.getElementById('share-btn').addEventListener('click', async () => {
   const url = location.origin + location.pathname + '#resumo';
-  const text = `Saturno Academy · Turma Fundadora\nPrograma de desenvolvimento artístico e de carreira da Casa Saturno. ${CFG.vagas} vagas, condição especial até ${CFG.deadlineLabel}.\nResumo completo: ${url}`;
+  const prazo = SA.modo === 'vagas' ? `${CFG.vagas} vagas, com seleção; a condição de fundador encerra quando a turma fechar.` : `${CFG.vagas} vagas, condição especial até ${CFG.deadlineLabel}.`;
+  const text = `Saturno Academy · Turma Fundadora\nPrograma de desenvolvimento artístico e de carreira da Casa Saturno. ${prazo}\nResumo completo: ${url}`;
+  if (window.gtag) gtag('event', 'share', { method: navigator.share ? 'nativo' : 'whatsapp', content_type: 'resumo' });
   if (navigator.share) { try { await navigator.share({ title: 'Saturno Academy · Turma Fundadora', text, url }); return; } catch (_) {} }
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 });
@@ -893,7 +1003,40 @@ function tick(){
   top.textContent = `${dd}d ${pad(hh)}h ${pad(mm)}m`;
   [dd,hh,mm,ss].forEach((v,i) => big.children[i].firstChild.textContent = pad(v));
 }
-tick(); setInterval(tick, 1000);
+if (SA.modo === 'contador') { tick(); setInterval(tick, 1000); }
+
+/* ===== medição: eventos (Pixel + GA4) ===== */
+function saTrack(fb, fbParams, ga, gaParams) {
+  if (window.fbq) fbq('track', fb, fbParams);
+  if (window.gtag) gtag('event', ga, gaParams);
+}
+/* vídeo: ViewContent / video_start uma vez por carregamento */
+const vid = document.querySelector('video');
+if (vid) vid.addEventListener('play', () => {
+  saTrack('ViewContent', { content_name: 'video_inauguracao' }, 'video_start', { video_title: 'inauguracao' });
+}, { once: true });
+/* links de WhatsApp fora da ficha: Contact / whatsapp_click + etiqueta de origem na mensagem */
+document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(a => {
+  a.addEventListener('click', () => {
+    const nome = a.dataset.sa || 'whatsapp_link';
+    try {
+      const u = new URL(a.href);
+      const txt = u.searchParams.get('text') || '';
+      if (!/Origem:/.test(txt)) { u.searchParams.set('text', txt + '\nOrigem: ' + saCodigoOrigem() + '/' + nome); a.href = u.toString(); }
+    } catch (_) {}
+    saTrack('Contact', { content_name: nome }, 'whatsapp_click', { link_name: nome, origem: saCodigoOrigem() });
+  });
+});
+/* banner de cookies */
+(function () {
+  const box = document.getElementById('ck');
+  const save = v => { try { localStorage.setItem('sa_consent', JSON.stringify({ v, ts: Date.now() })); } catch (_) {} box.hidden = true; if (v === 1) saLoadTracking(); };
+  document.getElementById('ck-ok').onclick = () => save(1);
+  document.getElementById('ck-no').onclick = () => save(0);
+  document.getElementById('ck-open').onclick = e => { e.preventDefault(); box.hidden = false; };
+  const pedir = new URLSearchParams(location.search).get('cookies') === '1';
+  if (SA.CONSENT_BANNER && (pedir || saConsent() === null)) box.hidden = false;
+})();
 
 /* reveal */
 const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }), {threshold:.12});

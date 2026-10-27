@@ -31,8 +31,23 @@ Tudo o que muda fica em um lugar e é injetado nos `<span data-cfg="...">`:
 - Removidos da proposta: "Saturno Kids", "Domingos no palco", "12 músicas / 9 ensaios em 3 anos", "2 meses adicionais", "Certificação 360°" como promessa.
 - Sem valores no site, a comparação parcelado × à vista (CDC) passa a ser feita pelo comercial ao apresentar os planos.
 
+## Medição e modo da oferta (27/10/2026)
+
+Implementa o handoff do chat de tráfego (arquivo local `claude/handoff-medicao-e-oferta-pos-3010.md`, fora do repositório). Tudo configurável no objeto `SA`, no `<head>` do `index.html`:
+
+- `PIXEL_ID` (Meta Pixel 1036113599501859) e `GA4_ID` (G-DTTTNXSLPN). Só carregam depois do aceite no banner de cookies (`sa_consent` no `localStorage`; aceite vale 365 dias, recusa 30). `CONSENT_BANNER: false` carrega sem perguntar.
+- `MODO_OFERTA`: `'auto'` (padrão) vira `'vagas'` a partir de `VAGAS_DESDE` (31/10/2026 00:00, horário de Brasília); `'contador'` ou `'vagas'` forçam. Pré-visualização: `?modo=vagas` ou `?modo=contador` na URL.
+  - Modo contador: faixa com data, contador no topo e na seção Investimento, "admitidos até 30/10", linha "Prazo" no resumo.
+  - Modo vagas: contador some; textos passam a "enquanto houver vaga / quando a turma fechar", sem data e sem número de vagas restantes; FAQ ganha "Até quando posso entrar?". Elementos marcados com `.so-contador` / `.so-vagas`.
+- Eventos: `ViewContent`/`video_start` no primeiro play; `Contact`/`whatsapp_click` nos links de WhatsApp (`data-sa`: `flutuante`, `rodape`, `cta-resumo`); `Lead`/`generate_lead` ao enviar a ficha (só faixa etária e interesse, nunca dado pessoal).
+- Origem: UTMs ficam 30 dias em `sa_origem`; sem UTM, deduz pelo referrer. A mensagem do WhatsApp termina com `Origem: source/medium/campaign/content/term` (`/nome-do-botão` nos links). Taxonomia de UTM e links prontos no handoff.
+- `privacidade.html`: política de privacidade (ficha, cookies, direitos, menores). Link no rodapé e no banner; `?cookies=1` reabre o banner.
+- Meta tag `facebook-domain-verification` no `<head>`; falta clicar em "Verificar domínio" no Business Manager.
+
+Pendências do handoff: texto final da política a confirmar; linha do plano à vista no modo vagas ficou neutra ("Pix ou TED na adesão") até o ajuste do contrato; teste com Meta Pixel Helper e GA4 Tempo real no site publicado.
+
 ## A confirmar antes de publicar
-- Prazo: 30/10 (comunicação) vs 31/10 (contrato).
+- Prazo: 30/10 (comunicação) vs 31/10 (contrato). Em 31/10 o site passa sozinho ao modo vagas (ver seção de medição).
 - Time: o PDF da proposta apresentado em 23/10 mostra seis pessoas (Igor, Omena, Tati, Kysha, Umberto, Juninho); o handoff cita cinco. O site segue o PDF.
 - Números de turnê (+70 mil ingressos, 23 estados, +60 shows) e da loja: vieram preenchidos no PDF de 23/10; o handoff pede confirmação.
 - Crescimento do elenco (Fidelisx 40 mil → 668 mil etc.): do handoff, marcado como "confirmar números".
