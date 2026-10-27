@@ -42,9 +42,11 @@ Implementa o handoff do chat de tráfego (arquivo local `claude/handoff-medicao-
 - Eventos: `ViewContent`/`video_start` no primeiro play; `Contact`/`whatsapp_click` nos links de WhatsApp (`data-sa`: `flutuante`, `rodape`, `cta-resumo`); `Lead`/`generate_lead` ao enviar a ficha (só faixa etária e interesse, nunca dado pessoal).
 - Origem: UTMs ficam 30 dias em `sa_origem`; sem UTM, deduz pelo referrer. A mensagem do WhatsApp termina com `Origem: source/medium/campaign/content/term` (`/nome-do-botão` nos links). Taxonomia de UTM e links prontos no handoff.
 - `privacidade.html`: política de privacidade (ficha, cookies, direitos, menores). Link no rodapé e no banner; `?cookies=1` reabre o banner.
-- Meta tag `facebook-domain-verification` no `<head>`; falta clicar em "Verificar domínio" no Business Manager.
+- Meta tag `facebook-domain-verification` no `<head>`; domínio verificado no Business Manager em 27/10/2026.
 
-Pendências do handoff: texto final da política a confirmar; linha do plano à vista no modo vagas ficou neutra ("Pix ou TED na adesão") até o ajuste do contrato; teste com Meta Pixel Helper e GA4 Tempo real no site publicado.
+Testado em 27/10/2026 no site publicado: PageView, Contact, ViewContent e Lead recebidos e processados no Gerenciador de Eventos (Eventos de teste), com o Lead carregando só `content_name`, `faixa_etaria` e `interesse`; GA4 Tempo real mostrando page_view, video_start, whatsapp_click e generate_lead.
+
+Pendências do handoff: texto final da política a confirmar; linha do plano à vista no modo vagas ficou neutra ("Pix ou TED na adesão") até o ajuste do contrato.
 
 ## A confirmar antes de publicar
 - Prazo: 30/10 (comunicação) vs 31/10 (contrato). Em 31/10 o site passa sozinho ao modo vagas (ver seção de medição).
