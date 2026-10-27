@@ -7,7 +7,7 @@
 <meta name="description" content="Programa premium de desenvolvimento artístico e de carreira para jovens artistas, dentro do ecossistema da Casa Saturno. Turma Fundadora: 50 vagas, com seleção e condição especial de fundador.">
 <meta property="og:title" content="Saturno Academy · Turma Fundadora">
 <meta property="og:description" content="Talento é o começo. Carreira se constrói. Formação artística + carreira + mercado + experiência, no mesmo lugar. 50 vagas de fundador.">
-<meta property="og:image" content="assets/case-kysha-mine.webp">
+<meta property="og:image" content="https://saturnoacademy.com/assets/foto-kysha-mine.webp">
 <link rel="icon" href="assets/logo-small.webp">
 <meta name="facebook-domain-verification" content="fwc0miwww73insagzqwf9fjp4js23z" />
 <script>
@@ -198,7 +198,17 @@ section{padding:clamp(56px,8vw,110px) 0;position:relative}
 .numbers .n{padding:22px;border-radius:var(--radius);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);text-align:center}
 .numbers b{display:block;font-size:clamp(2rem,4vw,2.8rem);font-weight:900;line-height:1;color:#fff}
 .numbers span{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#B9A6FF}
-.cases img{border-radius:var(--radius);width:100%}
+.case{background:#F7F5FC;color:var(--ink);border-radius:var(--radius);padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.case .tt{grid-column:1/-1;display:flex;align-items:center;gap:10px;font-weight:900;font-size:1rem;letter-spacing:.02em}
+.case .tt span{background:var(--p);color:#fff;border-radius:999px;padding:4px 12px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+.case img{width:100%;height:100%;object-fit:cover;border-radius:14px;display:block}
+.case .st{display:flex;flex-direction:column;gap:10px}
+.case .st div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;flex:1}
+.case .st b{display:block;font-size:1.9rem;font-weight:900;line-height:1;color:var(--p)}
+.case .st small{display:block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:5px}
+.case .st em{display:block;font-style:normal;font-size:.7rem;color:var(--muted);margin-top:3px}
+@media(max-width:560px){.case{grid-template-columns:1fr}.case img{max-height:320px}}
+.growth.now td:nth-child(2){color:#fff;font-weight:900}
 .cast{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
 @media(max-width:900px){.cast{grid-template-columns:1fr}}
 .cast .km{border-radius:var(--radius);overflow:hidden;background:#E6E5EA}
@@ -510,23 +520,39 @@ html[data-modo="contador"] .so-vagas{display:none!important}
       <h2>Do conteúdo ao impacto real.</h2>
     </div>
     <div class="grid g2 cases rv">
-      <img src="assets/case-lance-de-escola.webp" alt="Case Lance de Escola: mais de 350 milhões de views no YouTube, 15,9 milhões de horas assistidas e 174,6 mil seguidores somados no Instagram e TikTok">
-      <img src="assets/case-kysha-mine.webp" alt="Case Kysha e Mine: mais de 3,6 milhões de inscritos no YouTube, mais de 1 milhão de seguidores nas redes próprias e 1,7 milhão de curtidas no TikTok">
+      <div class="case">
+        <div class="tt"><span>Case 01</span>Lance de Escola</div>
+        <img src="assets/foto-lance-de-escola.webp" alt="Elenco de Lance de Escola com uniforme escolar">
+        <div class="st">
+          <div><b>+350 mi</b><small>views no YouTube</small><em>episódios, clipes e bastidores da série</em></div>
+          <div><b>4</b><small>temporadas</small><em>no canal Kysha e Mine</em></div>
+          <div><b>Palco</b><small>peça "Kysha e Mine em: Lance de Escola"</small><em>a série que virou teatro</em></div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="tt"><span>Case 02</span>Kysha &amp; Mine</div>
+        <img src="assets/foto-kysha-mine.webp" alt="Kysha e Mine">
+        <div class="st">
+          <div><b>+3,7 mi</b><small>inscritos no YouTube</small><em>canal com mais de 1,7 bilhão de views</em></div>
+          <div><b>+1 mi</b><small>seguidores no Instagram e TikTok</small><em>mais de 1,9 milhão de curtidas no TikTok</em></div>
+          <div><b>+70 mil</b><small>ingressos na turnê</small><em>23 estados, mais de 60 shows</em></div>
+        </div>
+      </div>
     </div>
 
     <div class="cast rv" style="margin-top:50px">
       <div class="km"><img src="assets/kysha-mine.webp" alt="Kysha e Mine"></div>
       <div>
         <h3 style="font-size:1.5rem">Talento que encontra o ambiente certo, cresce.</h3>
-        <p class="ink2"><strong style="color:#fff">Kysha e Mine</strong> somam cerca de 13 milhões de seguidores. E o elenco que entrou no ecossistema com Lance de Escola multiplicou o próprio público:</p>
-        <table class="growth">
-          <tr><td>Fidelisx</td><td>40 mil</td><td>→</td><td>668 mil</td></tr>
-          <tr><td>Russin do Molejo</td><td>70 mil</td><td>→</td><td>572 mil</td></tr>
-          <tr><td>Argentino</td><td>12 mil</td><td>→</td><td>340 mil</td></tr>
-          <tr><td>Evy</td><td>18 mil</td><td>→</td><td>277 mil</td></tr>
-          <tr><td>Kaka</td><td>32 mil</td><td>→</td><td>174 mil</td></tr>
+        <p class="ink2"><strong style="color:#fff">Kysha e Mine</strong> somam mais de 3,7 milhões de inscritos no YouTube e, nos perfis individuais, mais de 11 milhões de seguidores no Instagram e no TikTok. E o elenco que entrou no ecossistema com Lance de Escola construiu o próprio público:</p>
+        <table class="growth now">
+          <tr><td>Fidelisx</td><td>+650 mil</td></tr>
+          <tr><td>Russin do Molejo</td><td>+560 mil</td></tr>
+          <tr><td>Argentino</td><td>+330 mil</td></tr>
+          <tr><td>Evy</td><td>+270 mil</td></tr>
+          <tr><td>Kaka</td><td>+170 mil</td></tr>
         </table>
-        <p class="small" style="margin-top:10px">Seguidores antes e depois de Lance de Escola. Resultados de artistas do ecossistema, não uma promessa de resultado para alunos.</p>
+        <p class="small" style="margin-top:10px">Seguidores no Instagram em outubro de 2026. Resultados de artistas do ecossistema, não uma promessa de resultado para alunos.</p>
       </div>
     </div>
 

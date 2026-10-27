@@ -48,11 +48,18 @@ Testado em 27/10/2026 no site publicado: PageView, Contact, ViewContent e Lead r
 
 Pendências do handoff: texto final da política a confirmar; linha do plano à vista no modo vagas ficou neutra ("Pix ou TED na adesão") até o ajuste do contrato.
 
+## Prova social (27/10/2026)
+
+Fonte de verdade: documento local `claude/prova-social-validada.md` (Monitor Saturno de 26/10 + conferências manuais de 27/10). Aplicado no site:
+- Cases em HTML (`.case`) com números validados: Lance de Escola +350 mi views, 4 temporadas, peça; Kysha & Mine +3,7 mi inscritos, canal com +1,7 bi de views, +1 mi seguidores Instagram+TikTok, +1,9 mi curtidas, turnê +70 mil/23 estados/+60 shows. As composições antigas (`case-*.webp`, com 15,9 mi de horas, 174,6 mil seguidores, 3,6 mi inscritos e 1,7 mi curtidas, números sem fonte ou desatualizados) foram removidas; as fotos recortadas estão em `assets/foto-*.webp`.
+- "Kysha e Mine somam cerca de 13 milhões" virou "+3,7 mi inscritos no YouTube e, nos perfis individuais, +11 milhões no Instagram e TikTok" (1,36 + 6,5 + 1,40 + 2,5 mi).
+- Tabela "antes → depois" do elenco virou lista com os seguidores atuais no Instagram (Fidelisx +650 mil, Russin +560 mil, Argentino +330 mil, Evy +270 mil, Kaka +170 mil): os "antes" estão sem fonte no documento.
+- Turnê e palcos: validados, mantidos.
+
 ## A confirmar antes de publicar
 - Prazo: 30/10 (comunicação) vs 31/10 (contrato). Em 31/10 o site passa sozinho ao modo vagas (ver seção de medição).
 - Time: o PDF da proposta apresentado em 23/10 mostra seis pessoas (Igor, Omena, Tati, Kysha, Umberto, Juninho); o handoff cita cinco. O site segue o PDF.
-- Números de turnê (+70 mil ingressos, 23 estados, +60 shows) e da loja: vieram preenchidos no PDF de 23/10; o handoff pede confirmação.
-- Crescimento do elenco (Fidelisx 40 mil → 668 mil etc.): do handoff, marcado como "confirmar números".
+- Números da loja (11.078 produtos, R$ 1,14 mi, 5.592 clientes, 595 cidades): vieram do PDF de 23/10 e não constam do documento de prova social validada; seguem a confirmar.
 - Política de desconto para irmãos/grupo e de bolsa: não publicadas.
 - Pergunta "Preciso já ser artista?": sem resposta definida, fora do FAQ.
 
